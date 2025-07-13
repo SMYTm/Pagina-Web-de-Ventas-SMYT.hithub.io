@@ -1,0 +1,134 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; 
+    color: #333;
+}
+
+.contenedor-principal {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 900px;
+    padding: 20px;
+    /* QUITADAS LAS LÍNEAS PARA EL FONDO BLANCO, BORDES Y SOMBRA */
+    flex-wrap: wrap; 
+}
+
+.texto-contenido {
+    flex: 1;
+    padding-right: 20px;
+    min-width: 300px;
+    text-align: left;
+}
+
+.imagen-contenido {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+}
+
+.imagen-contenido img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px; /* Puedes quitar esto también si no quieres bordes redondeados en la imagen */
+}
+
+@media (max-width: 768px) {
+    .contenedor-principal {
+        flex-direction: column; 
+    }
+
+    .texto-contenido {
+        padding-right: 0;
+        padding-bottom: 20px; 
+        text-align: center;
+    }
+}
+/* --- Estilos para el botón de modo oscuro --- */
+#darkModeToggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1000;
+}
+
+#darkModeToggle .icon-mode {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+#darkModeToggle .icon-mode:hover {
+    transform: scale(1.1);
+}
+
+/* --- Estilos para el modo oscuro (aplicados al body) --- */
+body.dark-mode {
+    background-color: #1a1a1a; /* Fondo muy oscuro */
+    color: #e0e0e0; /* Texto claro */
+}
+
+body.dark-mode h1,
+body.dark-mode h2 {
+    color: #f0f0f0; /* Asegura que los encabezados también cambien de color */
+}
+
+/* Opcional: Si quieres transiciones suaves al cambiar de modo */
+body, h1, h2 { /* Incluye todos los elementos que quieres que tengan transición */
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Los estilos para .contenedor-principal, .texto-contenido, etc. NO LLEVAN background-color */
+/* Ya que el body.dark-mode se encarga del fondo */
+.contenedor-principal {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 900px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.texto-contenido {
+    flex: 1;
+    padding-right: 20px;
+    min-width: 300px;
+    text-align: left;
+}
+
+.imagen-contenido {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+}
+
+.imagen-contenido img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .contenedor-principal {
+        flex-direction: column;
+    }
+
+    .texto-contenido {
+        padding-right: 0;
+        padding-bottom: 20px;
+        text-align: center;
+    }
+}
