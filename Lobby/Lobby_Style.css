@@ -63,6 +63,33 @@ body {
     color: #007bff; /* Color de hover azul */
     background-color: transparent; /* No cambia el fondo en hover */
 }
+.main-nav ul li .logout-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease; /* Esta transición es para el fondo */
+}
+
+.main-nav ul li .logout-link:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.logout-link .logout-icon {
+    width: 48px; /* <-- Aquí se define el ancho */
+    height: 48px; /* <-- Aquí se define el alto */
+    margin-bottom: 0px;
+    display: block;
+}
+.logout-link .logout-text {
+    font-size: 0.85em;
+    color: #555; /* <-- ¡Asegúrate de que este color esté definido para el modo CLARO! */
+    white-space: nowrap;
+    transition: color 0.3s ease; /* <-- ¡Es crucial que esta transición exista! */
+}
 
 .lobby-content {
     flex-grow: 1;
@@ -242,6 +269,43 @@ body {
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
+/* --- Estilos para el BOTÓN de modo oscuro --- */
+.dark-mode-toggle {
+    position: fixed; /* Mantenemos 'fixed' para que no se mueva al hacer scroll */
+    top: 80px; /* <--- ¡AJUSTA ESTE VALOR! Distancia desde la parte superior */
+               /* Prueba con 70px, 80px, 90px, etc., hasta que quede justo debajo de tu header */
+    right: 20px; /* Distancia desde la derecha */
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #5a6268;
+    transform: scale(1.05);
+}
+
+/* Resto de tus estilos CSS... */
+
+/* Asegúrate de que .icon-mode esté definido para el tamaño de la imagen */
+.dark-mode-toggle .icon-mode {
+    width: 30px; /* Tamaño del ícono, ajusta según necesites */
+    height: 30px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
 /* --- ESTILOS PARA EL MODO OSCURO (Ajustados para el nuevo layout del Lobby) --- */
 body.dark-mode {
     background-color: #1a1a1a; /* Fondo muy oscuro */
@@ -257,6 +321,14 @@ body.dark-mode .main-header {
 body.dark-mode .main-nav .logo a,
 body.dark-mode .main-nav ul li a {
     color: #e0e0e0;
+}
+
+body.dark-mode .logout-link .logout-text {
+    color: #e0e0e0; /* Color del texto de cierre de sesión en modo oscuro */
+}
+
+body.dark-mode .logout-link:hover {
+    background-color: rgba(255,255,255,0.1); /* Hover en modo oscuro */
 }
 body.dark-mode .main-nav ul li a:hover {
     color: #61dafb; /* Azul claro para hover */
